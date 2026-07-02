@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 18px;
+  }
+  body {
+    @apply font-sans antialiased transition-colors duration-300 text-base;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-dark-border rounded-full hover:bg-brand-500/50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-light-border rounded-full hover:bg-brand-500/50;
+}
+
+@layer utilities {
+  /* Premium Glassmorphic utilities */
+  .glass-panel {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .glass-panel-light {
+    @apply glass-panel bg-white/70 border border-white/20 shadow-glass-light;
+  }
+
+  .glass-panel-dark {
+    @apply glass-panel bg-dark-card/75 border border-dark-border/40 shadow-glass-dark;
+  }
+
+  /* Auth Layout background */
+  .mesh-bg-light {
+    background-color: #f8fafc;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(253,16%,7%,0) 0, transparent 50%), 
+      radial-gradient(at 50% 0%, hsla(225,39%,30%,0.08) 0, transparent 50%), 
+      radial-gradient(at 100% 0%, hsla(339,49%,30%,0.05) 0, transparent 50%);
+  }
+
+  .mesh-bg-dark {
+    background-color: #0B0F19;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(242,50%,15%,0.4) 0, transparent 50%), 
+      radial-gradient(at 50% 0%, hsla(263,60%,15%,0.3) 0, transparent 50%), 
+      radial-gradient(at 100% 0%, hsla(290,40%,15%,0.25) 0, transparent 50%);
+  }
+}
